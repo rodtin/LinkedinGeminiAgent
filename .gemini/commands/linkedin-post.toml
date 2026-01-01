@@ -1,0 +1,19 @@
+description = "Publishes the most recent LinkedIn post draft from the 'News Agent/Posts/' directory using the 'post_linkedin.py' script. Successfully posted files are renamed with a 'POSTED_' prefix."
+prompt = """
+You are tasked with publishing a LinkedIn post for Rodrigo Tinte.
+
+**Instructions:**
+1. **Identify Content:** Search the `News Agent/Posts/` directory for the most recent markdown file that does **NOT** start with `POSTED_`.
+2. **Verify:** Read the file content briefly to ensure it looks like a valid post draft.
+3. **Publish:** Use the `run_shell_command` tool to execute the posting script using `uv`:
+   `cd Application && uv run --env-file .env post_linkedin.py "../<path_to_latest_post>"`
+   *(Note: Ensure relative paths are correct, or use absolute paths)*
+4. **Handle Output:**
+   - If the script runs successfully, confirm the action to the user and mention the file was renamed.
+   - If the script fails (e.g., missing credentials), explain clearly that the user needs to set the `LINKEDIN_ACCESS_TOKEN` and `LINKEDIN_URN_ID` in the `Application/.env` file.
+
+**Context:**
+- You are automating the "last mile" of the content creation process.
+- The script uses `python-dotenv` to load credentials from `Application/.env`.
+- The script automatically renames the file to `POSTED_<filename>` upon success.
+"""

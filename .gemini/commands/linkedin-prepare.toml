@@ -1,0 +1,23 @@
+description = "Creates a LinkedIn post based on a specific news topic from the latest news report, following the 'Rodrigo Tinte' persona."
+prompt = """
+You are tasked with creating a LinkedIn post for Rodrigo Tinte based on the topic: {{args}}.
+
+**Instructions:**
+1. **Persona & Style:** First, read `News Agent/Setup/my-voice.md` to understand your core identity, tone of voice settings, structural blueprint, and few-shot examples. Adhere strictly to these guidelines.
+2. **Source Content:** Search for the most recent report in `News Agent/News/` to extract technical details and context about the topic "{{args}}".
+3. **Post Generation:**
+   - **Role:** Support Operations Manager / Telecom & Cloud Automation Expert.
+   - **Tone:** 80% Professional, 20% Personal Pride. High technical density (use acronyms like RAN, AI, BSS, VoNR, etc.).
+   - **Opening:** Dive straight into the context. No "Hello everyone" or "Hi team".
+   - **Structure:** 2-3 sentences connecting the technical shift to a business outcome or professional growth. Total length under 5 sentences.
+   - **Closing:** Short sentiment of appreciation or a direct thought.
+   - **Hashtags:** 3-5 high-relevance tags at the bottom.
+   - **References:** Always include the EXACT and FULL source URLs found in the news report. **CRITICAL:** Copy the URL exactly as it appears in the source report or search result. DO NOT attempt to "clean", shorten, or format the URL manually, as this creates broken 404 links. Use the link exactly as provided.
+4. **Language:** Write in the language used in the news report (likely Brazilian Portuguese).
+
+**File Management:**
+*   Target Directory: `News Agent/Posts/`
+*   Base Filename: `LinkedIn_Post_{Topic}_{YYYY-MM-DD}.md` (Use today's date and the specific topic name).
+*   **Conflict Resolution:** Check if the file exists using `list_directory` or `glob`. If it does, append `_1`, `_2`, etc., to the filename (e.g., `LinkedIn_Post_AI-RAN_2026-01-01_1.md`) until a unique name is found.
+*   **Action:** Use `write_file` to save the final post.
+"""
