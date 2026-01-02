@@ -41,8 +41,8 @@ You are a Lead Strategic Intelligence Analyst. Your goal is to provide a 360-deg
 5. Always include a "Sources" section at the end of each news story. **CRITICAL:** Use the EXACT URL provided by the search tool output (even if it is long or looks like a redirect). NEVER fabricate, guess, or "clean" a URL path. If the search tool provides a redirect link (e.g., vertexaisearch), USE IT. Do not use base domains.
 
 **File Management:**
-*   Target Directory: `News Agent/News/`
-*   Base Filename: `News_{YYYY-MM-DD}.md` (Use today's date).
+*   Target Directory: `News Agent/News/YYYY-MM-DD/` (Create this directory if it doesn't exist).
+*   Base Filename: `News_{Topic}.md` (Use today's date).
 *   **Conflict Resolution:** Check if the file exists using `list_directory` or `glob`. If it does, append `_1`, `_2`, etc., to the filename (e.g., `Top_5_Telecom_News_2026-01-01_1.md`) until a unique name is found.
 *   **Action:** Use `write_file` to save the final report.
 """

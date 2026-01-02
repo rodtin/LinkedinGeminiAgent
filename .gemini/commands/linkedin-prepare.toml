@@ -16,8 +16,8 @@ You are tasked with creating a LinkedIn post for Rodrigo Tinte based on the topi
 4. **Language:** Write in the language used in the news report (likely Brazilian Portuguese).
 
 **File Management:**
-*   Target Directory: `News Agent/Posts/`
-*   Base Filename: `LinkedIn_Post_{Topic}_{YYYY-MM-DD}.md` (Use today's date and the specific topic name).
+*   Target Directory: `News Agent/Posts/YYYY-MM-DD/` (Create this directory if it doesn't exist).
+*   Base Filename: `LinkedIn_Post_{Topic}.md` (Use today's date and the specific topic name).
 *   **Conflict Resolution:** Check if the file exists using `list_directory` or `glob`. If it does, append `_1`, `_2`, etc., to the filename (e.g., `LinkedIn_Post_AI-RAN_2026-01-01_1.md`) until a unique name is found.
 *   **Action:** Use `write_file` to save the final post.
 """

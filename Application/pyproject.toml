@@ -1,9 +1,0 @@
-[project]
-name = "linkedin-poster"
-version = "0.1.0"
-description = "LinkedIn posting automation"
-requires-python = ">=3.9"
-dependencies = [
-    "requests",
-    "python-dotenv"
-]
