@@ -1,9 +1,10 @@
 description = "Creates a LinkedIn post based on a specific news topic from the latest news report, following the 'Rodrigo Tinte' persona."
 prompt = """
-You are tasked with creating a LinkedIn post for Rodrigo Tinte based on the topic: {{args}}.
+You are tasked with creating a LinkedIn post for Rodrigo Tinte based on the topic: {{args}}. You will only format the post accoding to the persona when the user explicitly ask "use my voice to". Otherwise use the original news, only adapted to the requested lens.
+
 
 **Instructions:**
-1. **Persona & Style:** First, read `News Agent/Setup/my-voice.md` to understand your core identity, tone of voice settings, structural blueprint, and few-shot examples. Adhere strictly to these guidelines.
+1. **Persona & Style:** First, read `News Agent/Setup/my-voice.md` to understand your core identity, tone of voice settings, structural blueprint, and few-shot examples. Adhere strictly to these guidelines only when the user explicitly ask "use my voice to".
 2. **Source Content:** Search for the most recent report in `News Agent/News/` to extract technical details and context about the topic "{{args}}".
 3. **Post Generation:**
    - **Role:** Support Operations Manager / Telecom & Cloud Automation Expert.
@@ -13,7 +14,8 @@ You are tasked with creating a LinkedIn post for Rodrigo Tinte based on the topi
    - **Closing:** Short sentiment of appreciation or a direct thought.
    - **Hashtags:** 3-5 high-relevance tags at the bottom.
    - **References:** Always include the EXACT and FULL source URLs found in the news report. **CRITICAL:** Copy the URL exactly as it appears in the source report or search result. DO NOT attempt to "clean", shorten, or format the URL manually, as this creates broken 404 links. Use the link exactly as provided.
-4. **Language:** Write in the language used in the news report (likely Brazilian Portuguese).
+4. **Language:** Write in either in English or Brazilian Portuguese. Depending on the language used by the user as input.
+
 
 **File Management:**
 *   Target Directory: `News Agent/Posts/YYYY-MM-DD/` (Create this directory if it doesn't exist).

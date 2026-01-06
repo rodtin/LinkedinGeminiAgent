@@ -1,0 +1,5 @@
+While security and anti-fraud APIs remain the most common commercial deployments (two-thirds of the total), there is a significant trend towards API diversification. In the first half of 2025, Quality-on-Demand (QoD) and edge compute services have seen a sharp increase, now accounting for 25% of new API launches. This is a substantial jump from less than 10% in 2024. The growth in QoD APIs, in particular, signals a move towards enabling more demanding applications, such as cloud gaming or industrial automation, which require guaranteed network performance. The rise of edge compute APIs shows that operators are looking to leverage their distributed infrastructure to offer low-latency services, a key differentiator against centralized cloud services.
+
+#NetworkAPIs #Aduna #Ericsson #QualityOnDemand #EdgeComputing #5G #Telecom
+
+**Source:** https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE7Kqm8TVlSn9tFJLejQ9Aoj8NKvVGYzWL8_AwnMvyPoV-OM1HGcDvAA6_lr3bn2A5wzmBFLcNCrWQNsPwB4qwwxMXAub4T6hk_Z3TTuclDqp-KltHI1W_o6GyRT20fMonAotZ4ZU0_qkfcC6O3tKno
