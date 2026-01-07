@@ -11,7 +11,21 @@ load_dotenv()
 ACCESS_TOKEN = os.getenv('LINKEDIN_ACCESS_TOKEN')
 URN_ID = os.getenv('LINKEDIN_URN_ID') # e.g., "urn:li:person:..." or "urn:li:organization:..."
 
+
+# Additional logic to support being imported from parent directory
+current_dir = os.path.dirname(os.path.abspath(__file__))
+env_path = os.path.join(current_dir, '.env.docker')
+if os.path.exists(env_path):
+    load_dotenv(env_path)
+else:
+    load_dotenv(os.path.join(current_dir, '.env'))
+
+# Configuration
+ACCESS_TOKEN = os.getenv('LINKEDIN_ACCESS_TOKEN')
+URN_ID = os.getenv('LINKEDIN_URN_ID') # e.g., "urn:li:person:..." or "urn:li:organization:..."
+
 def post_to_linkedin(file_path):
+
     if not ACCESS_TOKEN or not URN_ID:
         print("Error: LINKEDIN_ACCESS_TOKEN and LINKEDIN_URN_ID environment variables must be set.")
         print("Please configure your credentials in the 'Application/.env' file.")

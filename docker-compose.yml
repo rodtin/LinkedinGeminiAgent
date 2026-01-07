@@ -1,0 +1,16 @@
+version: '3.8'
+name: LinkedinGeminiAgent
+
+services:
+  news-bot:
+    build: .
+    container_name: LinkedinGeminiAgent
+    restart: unless-stopped
+    env_file:
+      - Application/.env.docker
+    volumes:
+      # Persist News and Posts directories to the host machine
+      - ./News Agent/News:/app/News Agent/News
+      - ./News Agent/Posts:/app/News Agent/Posts
+      # Mount the Setup directory so personality/urls can be edited live
+      - ./News Agent/Setup:/app/News Agent/Setup
